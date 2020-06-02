@@ -57,7 +57,7 @@ class ClientLoginController extends Controller
     private function attempt()
     {
         return $this->guard()->attempt([
-            'mobile_number' => request()->input('mobile'), 
+            'mobile' => request()->input('mobile'), 
             'password'      => request()->input('password'),
             'status'        => 1
             ]);

@@ -25,7 +25,7 @@ class MobileLogin extends FormRequest
     public function attributes()
     {
         return [
-           // 'mobile'  => 'mobile number',
+            'mobile'  => 'mobile number',
         ];
     }
 

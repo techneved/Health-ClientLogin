@@ -30,7 +30,7 @@ $factory->define(Client::class, function (Faker $faker) {
         'password' => bcrypt('password'),
         'gender' => $gender,
         'dob' => $faker->date,
-        'age' => $faker->rand(1,100),
+        'age' => $faker->numberBetween(1,100),
         'remember_token' => Str::random(10)
     ];
 });

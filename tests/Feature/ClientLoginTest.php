@@ -105,6 +105,7 @@ class ClientLoginTest extends TestCase
      */
     public function check_valid_credentials()
     {
+       
 
         $credentails = [
             'mobile' => $this->client->mobile,
@@ -119,7 +120,7 @@ class ClientLoginTest extends TestCase
             'access_token',
             'token_type',
             'expires_in',
-            'teacher'
+            'client'
         ], $response, 'data');
     }
 
@@ -131,10 +132,10 @@ class ClientLoginTest extends TestCase
      */
     public function check_unactive_status_with_valid_credentials()
     {
-
-        $instructor = $this->createClientUnActive();
+        $this->withoutExceptionHandling();
+        $client = $this->createClientUnActive();
         $credentails = [
-            'mobile' => $instructor->mobile_number,
+            'mobile' => $client->mobile,
             'password' => 'password',
         ];
         $response = $this->postJson(route('client.login'), $credentails);
